@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #f4f7fb;
+        }
+
+        .navbar {
+            background: #0b2850;
+            color: white;
+            padding: 18px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logout {
+            color: white;
+            text-decoration: none;
+            background: #d32f2f;
+            padding: 9px 18px;
+            border-radius: 7px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 50px auto;
+        }
+
+        .welcome {
+            background: linear-gradient(135deg, #0b2850, #1565c0);
+            color: white;
+            padding: 35px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        .welcome h1 {
+            margin-bottom: 10px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .card h2 {
+            color: #123b68;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .detect-btn {
+            display: inline-block;
+            margin-top: 20px;
+            background: #0d47a1;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .detect-btn:hover {
+            background: #08306b;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <div class="brand">
+            🔍 Fake Job Detection
+        </div>
+
+        <a href="/logout" class="logout">
+            Logout
+        </a>
+
+    </div>
+
+
+    <div class="container">
+
+        <div class="welcome">
+
+            <h1>
+                Welcome, {{ username }}! 👋
+            </h1>
+
+            <p>
+                Student Dashboard — Fake Job Detection
+                Using Machine Learning
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="icon">🔍</div>
+
+                <h2>
+                    Fake Job Detection
+                </h2>
+
+                <p>
+                    Analyze job descriptions using
+                    Machine Learning and TF-IDF
+                    to identify potentially fake
+                    job postings.
+                </p>
+
+                <a href="/detect"
+                   class="detect-btn">
+
+                    Start Detection
+
+                </a>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">🤖</div>
+
+                <h2>
+                    Machine Learning
+                </h2>
+
+                <p>
+                    The system uses a trained
+                    machine learning model to
+                    classify job postings as
+                    Genuine or Fake.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">🛡️</div>
+
+                <h2>
+                    Fraud Protection
+                </h2>
+
+                <p>
+                    Helps students identify
+                    suspicious job postings
+                    before applying.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

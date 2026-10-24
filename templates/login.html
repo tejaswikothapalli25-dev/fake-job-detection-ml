@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Login</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #07152f, #123b70);
+        }
+
+        .login-box {
+            width: 400px;
+            max-width: 92%;
+            background: white;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            margin: auto;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1e90ff, #00c6ff);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 18px;
+            color: #102b56;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #777;
+            margin: 8px 0 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 17px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        input:focus {
+            border-color: #1e90ff;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #1e90ff;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .login-btn:hover {
+            background: #1478d4;
+        }
+
+        .links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .links a {
+            color: #1e75d9;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        .error {
+            background: #ffe5e5;
+            color: #c0392b;
+            padding: 10px;
+            border-radius: 7px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .success {
+            background: #e4f8eb;
+            color: #16803c;
+            padding: 10px;
+            border-radius: 7px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="login-box">
+
+    <div class="logo">FJ</div>
+
+    <h1>Student Login</h1>
+
+    <p class="subtitle">
+        Fake Job Detection System
+    </p>
+
+    {% if error %}
+        <div class="error">
+            {{ error }}
+        </div>
+    {% endif %}
+
+    {% if success %}
+        <div class="success">
+            {{ success }}
+        </div>
+    {% endif %}
+
+    <form method="POST">
+
+        <label>Username</label>
+
+        <input
+            type="text"
+            name="username"
+            placeholder="Enter username"
+            required
+        >
+
+        <label>Password</label>
+
+        <input
+            type="password"
+            name="password"
+            placeholder="Enter password"
+            required
+        >
+
+        <button class="login-btn" type="submit">
+            Login
+        </button>
+
+    </form>
+
+    <div class="links">
+
+        <p>
+            <a href="/forgot-password">
+                Forgot Password?
+            </a>
+        </p>
+
+        <br>
+
+        <p>
+            New Student?
+            <a href="/register">
+                Register Here
+            </a>
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>
